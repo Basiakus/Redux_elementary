@@ -1,7 +1,8 @@
-const ADD_COMMENT = 'ADD_COMMENT';
-const EDIT_COMMENT = 'EDIT_COMMENT';
-const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
-const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const EDIT_COMMENT = 'EDIT_COMMENT';
+export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
+export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
+import uuid from uuid;
 //Akcje
 {
     type: ADD_COMMENT,
@@ -55,16 +56,20 @@ function editComment(id, text) { // kreator funkcji edycji
 	};
 }
 
-function thumbUp(like, id) { //kreator funkcji +1
+function thumbUp(votes, id) { //kreator funkcji +1
 	return {
-		like + 1,
+		type: THUMB_UP_COMMENT,
+		votes + 1,
 		id
 	};
 }
 
-function thumbUp(disLike, id) { //kreator funkcji -1
+function thumbUp(votes, id) { //kreator funkcji -1
 	return {
-		disLike + 1,
+		type: THUMB_DOWN_COMMENT,
+		votes - 1,
 		id
 	};
 }
+
+const boundAddComment = text => dispatch(addComment(text));

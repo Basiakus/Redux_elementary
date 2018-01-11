@@ -1,0 +1,23 @@
+{
+  "name": "19.redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Basiakus/Redux_elementary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Basiakus/Redux_elementary/issues"
+  },
+  "homepage": "https://github.com/Basiakus/Redux_elementary#readme",
+  "devDependencies": {
+    "uuid": "^3.1.0"
+  }
+}
