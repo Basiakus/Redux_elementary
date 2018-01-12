@@ -1,15 +1,14 @@
-import {ADD_COMMENT} from './index.js';
+import {
+	ADD_COMMENT, 
+	EDIT_COMMENT,
+	THUMB_UP_COMMENT,
+	THUMB_DOWN_COMMENT
+	} from './actions.js';
+
 const inicialState = {
 	comments: [],
 	users: []
 };
-
-function resucer(state, action) {
-	if (!state) {
-		return inicialState;
-	}
-	return state;
-}
 
 function rediucer(state = inicialState, action) {
 	switch(action.type) {
@@ -29,9 +28,11 @@ function rediucer(state = inicialState, action) {
 				comments: state.comments.filter(comment => comment.id !== action.id)
 			});
 		case EDIT_COMMENT:
-			return Object.assign({}, state, {
-				comments: state.comments.find()
-			}); 
+			return state.map(comment => comment.id === action.id) ? ...comment, text = action.text : comment);
+		case THUMB_UP_COMMENT:
+			return state map(coment => comment.id ===action.id) ? ...comment, votes = action.votes + 1 : comment);
+		case THUMB_DOWN_COMMENT:
+			return state map(coment => comment.id ===action.id) ? ...comment, votes = action.votes - 1 : comment);
 	default:
 		return state;
 	}
