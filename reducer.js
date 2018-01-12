@@ -28,11 +28,11 @@ function rediucer(state = inicialState, action) {
 				comments: state.comments.filter(comment => comment.id !== action.id)
 			});
 		case EDIT_COMMENT:
-			return state.map(comment => comment.id === action.id) ? ...comment, text = action.text : comment);
+			return state.map(comment => comment.id === action.id) ? {...comment, text: action.text} : comment);
 		case THUMB_UP_COMMENT:
-			return state map(coment => comment.id ===action.id) ? ...comment, votes = action.votes + 1 : comment);
+			return state.map(comment => comment.id === action.id) ? {...comment, votes: comment.votes + 1} : comment);
 		case THUMB_DOWN_COMMENT:
-			return state map(coment => comment.id ===action.id) ? ...comment, votes = action.votes - 1 : comment);
+			return state.map(comment => comment.id === action.id) ? {...comment, votes: comment.votes - 1} : comment);
 	default:
 		return state;
 	}
