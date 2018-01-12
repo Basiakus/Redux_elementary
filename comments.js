@@ -2,7 +2,8 @@ import {
     ADD_COMMENT, 
     EDIT_COMMENT,
     THUMB_UP_COMMENT,
-    THUMB_DOWN_COMMENT
+    THUMB_DOWN_COMMENT,
+    REMOVE_COMMENT
     } from './actions.js';
 
 
