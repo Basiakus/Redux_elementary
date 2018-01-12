@@ -1,3 +1,12 @@
+import {
+    ADD_COMMENT, 
+    EDIT_COMMENT,
+    THUMB_UP_COMMENT,
+    THUMB_DOWN_COMMENT
+    } from './actions.js';
+
+
+
 function comments(state = [], action) {
     switch(action.type) {
         case ADD_COMMENT:
@@ -7,10 +16,10 @@ function comments(state = [], action) {
                 votes: 0
             }, 
             ...state.comments];
+
         case REMOVE_COMMENT:
-			return Object.assign({}, state, {
-				comments: state.comments.filter(comment => comment.id !== action.id)
-			});
+			return state.filter(comment => comment.id !== action.id);
+			
 		case EDIT_COMMENT:
 			return state.map(comment => comment.id === action.id) ? {...comment, text: action.text} : comment);
 		case THUMB_UP_COMMENT:
