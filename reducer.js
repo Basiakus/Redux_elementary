@@ -17,5 +17,6 @@ function app(state = initialState, action) {
         users: users(state.users, action)
     };
 }
+export default reducers;
 
 
