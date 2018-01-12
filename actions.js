@@ -15,7 +15,7 @@ function addComment(text) { // kreator akcji dodawania komentarza
 function removeComment(id) { // kreator akcji usuwania komentarza
 	return {
 		type: REMOVE_COMMENT,
-		id,
+		id
 	};
 }
 
